@@ -1,0 +1,5 @@
+name="Core"
+description="核心功能模块"
+version="1.0"
+supports=("arm64" "x86_64")
+dependencies=()

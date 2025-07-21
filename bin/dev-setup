@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# 基础配置
+BASE_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
+source "$BASE_DIR/lib/utils.sh"
+
+# 加载全局配置
+load_config() {
+  if [ -f "$BASE_DIR/config/global.conf" ]; then
+    source "$BASE_DIR/config/global.conf"
+  else
+    log "全局配置文件不存在，使用默认配置"
+  fi
+}
+
+# 主菜单
+main_menu() {
+  echo "========================================"
+  echo "      macOS 开发环境自动化配置工具      "
+  echo "========================================"
+  echo "1. 安装开发环境"
+  echo "2. 配置已安装软件"
+  echo "3. 管理模块"
+  echo "4. 退出"
+  echo "========================================"
+  
+  read -p "请选择操作 [1-4]: " choice
+  # 后续添加处理逻辑
+}
+
+# 启动
+load_config
+main_menu
